@@ -113,6 +113,19 @@ namespace Darari
                     richTextBox1.Clear();
                 }
             }
+
+            try
+            {
+                TranslatorService.LanguageServiceClient client = new TranslatorService.LanguageServiceClient();
+                client = new TranslatorService.LanguageServiceClient();
+                string strTranslatedText = client.Translate("6CE9C85A41571C050C379F60DA173D286384E0F2", textBox2.Text, "", "tr");
+                label1.Text = strTranslatedText;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
